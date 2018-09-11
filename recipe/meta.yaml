@@ -1,5 +1,4 @@
-{% set version = '0.92-7' %}
-
+{% set version = '0.93-2' %}
 {% set posix = 'm2-' if win else '' %}
 {% set native = 'm2w64-' if win else '' %}
 
@@ -10,13 +9,13 @@ package:
 source:
   fn: robustbase_{{ version }}.tar.gz
   url:
-    - https://cran.r-project.org/src/contrib/robustbase_{{ version }}.tar.gz
-    - https://cran.r-project.org/src/contrib/Archive/robustbase/robustbase_{{ version }}.tar.gz
-  sha256: fcbd6ccbb0291b599fe6a674a91344511e0a691b9cadba0a9d40037faa22bf8f
+    - {{ cran_mirror }}/src/contrib/robustbase_{{ version }}.tar.gz
+    - {{ cran_mirror }}/src/contrib/Archive/robustbase/robustbase_{{ version }}.tar.gz
+  sha256: 27b282ef2c91274f6d88ba0cea468d1078c5d37639cdb141c538a61dc7b96298
 
 build:
   merge_build_host: True  # [win]
-  number: 1
+  number: 0
   skip: true  # [win32]
   rpaths:
     - lib/R/lib/
@@ -24,33 +23,43 @@ build:
 
 requirements:
   build:
-    - posix                # [win]
-    - {{ compiler('fortran') }}        # [unix]
-    - {{ compiler('m2w64_fortran') }}  # [win]
-    - {{ compiler('c') }}        # [unix]
-    - {{ compiler('m2w64_c') }}  # [win]
+    - {{ compiler('c') }}        # [not win]
+    - {{ compiler('fortran') }}  # [not win]
+    - {{native}}toolchain        # [win]
+    - {{posix}}filesystem        # [win]
+    - {{posix}}make
+    - {{posix}}sed               # [win]
+    - {{posix}}coreutils         # [win]
+    - {{posix}}zip               # [win]
   host:
     - r-base
     - r-deoptimr
-
   run:
     - r-base
+    - {{native}}gcc-libs         # [win]
     - r-deoptimr
 
 test:
   commands:
-    - $R -e "library('robustbase')"  # [not win]
+    - $R -e "library('robustbase')"           # [not win]
     - "\"%R%\" -e \"library('robustbase')\""  # [win]
 
 about:
   home: http://robustbase.r-forge.r-project.org/
   license: GPL (>= 2)
-  summary: |
-    Essential Robust Statistics. Tools allowing to analyze data with robust methods.  This
-    includes regression methodology including model selections and multivariate statistics.
+  summary: '"Essential" Robust Statistics. Tools allowing to analyze data with robust methods.  This
+    includes regression methodology including model selections and multivariate statistics
+    where we strive to cover the book "Robust Statistics, Theory and Methods" by ''Maronna,
+    Martin and Yohai''; Wiley 2006.'
   license_family: GPL3
+  license_file: '{{ environ["PREFIX"] }}/lib/R/share/licenses/GPL-3'  # [unix]
+  license_file: '{{ environ["PREFIX"] }}\R\share\licenses\GPL-3'  # [win]
 
 extra:
   recipe-maintainers:
     - johanneskoester
     - bgruening
+    - daler
+    - jdblischak
+    - cbrueffer
+    - dbast
