@@ -32,6 +32,7 @@ requirements:
     - {{posix}}zip               # [win]
   host:
     - libblas
+    - liblapack
     - r-base
     - r-deoptimr
   run:
