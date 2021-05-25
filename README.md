@@ -3,7 +3,7 @@ About r-robustbase
 
 Home: http://robustbase.r-forge.r-project.org/
 
-Package license: GPL (>= 2)
+Package license: GPL-2.0-or-later
 
 Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/r-robustbase-feedstock/blob/master/LICENSE.txt)
 
