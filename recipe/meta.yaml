@@ -21,6 +21,8 @@ build:
 
 requirements:
   build:
+    - cross-r-base {{ r_base }}  # [build_platform != target_platform]
+    - r-deoptimr                 # [build_platform != target_platform]
     - {{ compiler('c') }}        # [not win]
     - {{ compiler('fortran') }}  # [not win]
     - {{ compiler('m2w64_c') }}        # [win]
