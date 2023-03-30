@@ -1,11 +1,22 @@
+About r-robustbase-feedstock
+============================
+
+Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/r-robustbase-feedstock/blob/main/LICENSE.txt)
+
 About r-robustbase
-==================
+------------------
 
 Home: http://robustbase.r-forge.r-project.org/
 
 Package license: GPL-2.0-or-later
 
-Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/r-robustbase-feedstock/blob/main/LICENSE.txt)
+Summary: "Essential" Robust Statistics. Tools allowing to analyze data with robust methods.  This includes regression methodology including model selections and multivariate statistics where we strive to cover the book "Robust Statistics, Theory and Methods" by 'Maronna, Martin and Yohai'; Wiley 2006.
+About r-robustbase
+------------------
+
+Home: http://robustbase.r-forge.r-project.org/
+
+Package license: GPL-2.0-or-later
 
 Summary: "Essential" Robust Statistics. Tools allowing to analyze data with robust methods.  This includes regression methodology including model selections and multivariate statistics where we strive to cover the book "Robust Statistics, Theory and Methods" by 'Maronna, Martin and Yohai'; Wiley 2006.
 
