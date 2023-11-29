@@ -3,6 +3,7 @@ About r-robustbase-feedstock
 
 Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/r-robustbase-feedstock/blob/main/LICENSE.txt)
 
+
 About r-robustbase
 ------------------
 
@@ -11,6 +12,7 @@ Home: http://robustbase.r-forge.r-project.org/
 Package license: GPL-2.0-or-later
 
 Summary: "Essential" Robust Statistics. Tools allowing to analyze data with robust methods.  This includes regression methodology including model selections and multivariate statistics where we strive to cover the book "Robust Statistics, Theory and Methods" by 'Maronna, Martin and Yohai'; Wiley 2006.
+
 About r-robustbase
 ------------------
 
@@ -195,7 +197,7 @@ available continuous integration services. Thanks to the awesome service provide
 [CircleCI](https://circleci.com/), [AppVeyor](https://www.appveyor.com/),
 [Drone](https://cloud.drone.io/welcome), and [TravisCI](https://travis-ci.com/)
 it is possible to build and upload installable packages to the
-[conda-forge](https://anaconda.org/conda-forge) [Anaconda-Cloud](https://anaconda.org/)
+[conda-forge](https://anaconda.org/conda-forge) [anaconda.org](https://anaconda.org/)
 channel for Linux, Windows and OSX respectively.
 
 To manage the continuous integration and simplify feedstock maintenance
