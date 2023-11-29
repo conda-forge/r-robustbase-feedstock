@@ -1,4 +1,4 @@
-{% set version = "0.99-0" %}
+{% set version = "0.99-1" %}
 {% set posix = 'm2-' if win else '' %}
 {% set native = 'm2w64-' if win else '' %}
 
@@ -10,7 +10,7 @@ source:
   url:
     - {{ cran_mirror }}/src/contrib/robustbase_{{ version }}.tar.gz
     - {{ cran_mirror }}/src/contrib/Archive/robustbase/robustbase_{{ version }}.tar.gz
-  sha256: 437d422eec29c4345ea65efa6b2c7c21944059a79643d74f4187e06db6e35077
+  sha256: ae1a1bece804172e30c1aa6ee7dafb638b53123bed1e906b4863c2310cef7858
 
 build:
   merge_build_host: true  # [win]
