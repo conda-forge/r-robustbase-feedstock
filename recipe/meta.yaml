@@ -1,4 +1,4 @@
-{% set version = "0.99-2" %}
+{% set version = "0.99-3" %}
 {% set posix = 'm2-' if win else '' %}
 
 package:
@@ -9,10 +9,10 @@ source:
   url:
     - {{ cran_mirror }}/src/contrib/robustbase_{{ version }}.tar.gz
     - {{ cran_mirror }}/src/contrib/Archive/robustbase/robustbase_{{ version }}.tar.gz
-  sha256: b6a69628f7ae36b5eb553412365afb3227fde2f7b64000cfad77ba3562fecd44
+  sha256: 61bc13dcf5ebed9b34678fd97f25bd2488637ffd5a01824ba10f454270da0086
 
 build:
-  number: 1
+  number: 0
   rpaths:
     - lib/R/lib/
     - lib/
